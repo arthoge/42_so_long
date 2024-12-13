@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:10:12 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/13 23:34:33 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/14 00:11:06 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,15 @@ static int	ft_calculate_window_size(t_game *game)
 {
 	game->wd_width = game->map_width * IMG_SIZE;
 	game->wd_height = game->map_height * IMG_SIZE;
-	if (game->wd_width > 1600 || game->wd_height > 900)
+	if (game->wd_width > 1920 || game->wd_height > 1080)
 	{
+		ft_printf("Error\n");
 		ft_printf("Your map exceeds window maximum size\n");
 		return (0);
 	}
 	if (game->wd_width <= 0 || game->wd_height <= 0)
 	{
+		ft_printf("Error\n");
 		ft_printf("Invalid window: %d x %d\n", game->wd_width, game->wd_height);
 		return (0);
 	}

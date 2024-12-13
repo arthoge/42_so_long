@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 15:29:21 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/13 23:31:59 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/14 00:33:59 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SO_LONG_H
 
 # include <stdlib.h>
+# include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
 # include <X11/keysym.h>

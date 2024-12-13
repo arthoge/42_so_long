@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 19:54:14 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/13 23:48:52 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/14 00:26:59 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,16 @@ static int	ft_can_reach(t_game *game, char target)
 int	ft_check_valid_path(t_game *game)
 {
 	if (!ft_can_reach(game, 'C'))
+	{
+		ft_printf("Error\n");
+		ft_printf("No valid path, impossible to reach all collectibles.\n");
 		return (0);
+	}
 	if (!ft_can_reach(game, 'E'))
+	{
+		ft_printf("Error\n");
+		ft_printf("No valid path, impossible to each exit.\n");
 		return (0);
+	}
 	return (1);
 }

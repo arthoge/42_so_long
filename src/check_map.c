@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:01:05 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/13 23:33:32 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/14 00:30:21 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,11 +98,22 @@ static int	ft_check_elements(t_game *game)
 int	ft_check_map(t_game *game)
 {
 	if (!ft_check_rectangle(game))
+	{
+		ft_printf("Error\n");
+		ft_printf("Map is not a rectangle.\n");
 		return (0);
+	}
 	if (!ft_check_elements(game))
+	{
+		ft_printf("Error\n");
+		ft_printf("Not the right count of elements on the map.\n");
 		return (0);
+	}
 	if (!ft_check_walls(game, '1'))
+	{
+		ft_printf("Error\n");
+		ft_printf("Problem with walls all around the map.\n");
 		return (0);
-	// return "Error/n" followed by an explicit message if wrong.
+	}
 	return (1);
 }
