@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:12:51 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/13 17:29:02 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/14 02:09:17 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,10 @@ void	ft_move_hero(t_game *game, int move_x, int move_y)
 			ft_move_empty_or_coll(game, new_y, new_x);
 		else if (game->map[new_y][new_x] == 'E')
 			ft_move_exit(game, new_y, new_x);
+	}
+	if (game->nbr_move == 1000)
+	{
+		ft_printf("Maximum number of moves reached, lost due to fatigue.\n");
+		ft_handle_close(game);
 	}
 }

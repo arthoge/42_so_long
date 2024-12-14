@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:12:00 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/13 19:49:49 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/14 02:02:56 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ static void	ft_select_image(t_game *game, char tile, int x, int y)
 		else
 			ft_display_image(game, game->exit_close_img, x, y);
 	}
+	else if (tile == 'X')
+		ft_display_image(game, game->enemy_img, x, y);
 }
 
 static void	ft_draw_elements(t_game *game)
@@ -56,10 +58,34 @@ static void	ft_draw_elements(t_game *game)
 	}
 }
 
+static void	ft_draw_black_square(t_game *game, int x, int y, int size)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
+		while (j < size)
+		{
+			mlx_pixel_put(game->mlx_ptr, game->win_ptr, x + i, y + j, 0x000000);
+			j++;
+		}
+		i++;
+	}
+}
+
 void	ft_render_map(t_game *game)
 {
+	char	*nbr_move;
+
+	nbr_move = ft_itoa(game->nbr_move);
 	mlx_clear_window(game->mlx_ptr, game->win_ptr);
 	ft_draw_elements(game);
+	ft_draw_black_square(game, 5, 5, 20);
+	ft_draw_black_square(game, 20, 5, 20);
+	mlx_string_put(game->mlx_ptr, game->win_ptr, 13, 20, 0xFFFFFF, nbr_move);
 }
 
 // static void	ft_draw_background(t_game *game, int wd_width, int wd_height)

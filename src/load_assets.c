@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:11:07 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/13 17:23:41 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/14 01:05:24 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int	ft_load_assets(t_game *game)
 	if (!ft_load_img(game, &game->exit_open_img, "img/exit_open.xpm"))
 		return (0);
 	if (!ft_load_img(game, &game->hero_rev_img, "img/hero_rev.xpm"))
+		return (0);
+	if (!ft_load_img(game, &game->enemy_img, "img/enemy.xpm"))
 		return (0);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 19:54:14 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/14 00:26:59 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/14 01:42:43 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static char	**ft_create_tab_copy(char **tab, int tab_height)
 static void	ft_flood_fill(char **map, int x, int y, char target)
 {
 	int	row_len;
-	
+
 	if (x < 0 || y < 0 || !map[y])
 		return ;
 	row_len = (int)ft_strlen(map[y]);

@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:10:12 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/14 00:11:06 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/14 00:59:43 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ int	ft_init_game(char *file_path, t_game *game)
 		ft_free_tab(game->map, game->map_height);
 		return (0);
 	}
+	ft_init_enemy(game);
 	if (!ft_calculate_window_size(game))
 	{
 		ft_free_tab(game->map, game->map_height);

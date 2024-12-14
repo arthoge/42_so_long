@@ -21,7 +21,9 @@ SRC =	src/main.c \
 		src/render.c \
 		src/handle_events.c \
 		src/move_hero.c \
-		src/utils.c
+		src/utils.c \
+		src/init_enemy_bonus.c \
+		src/move_enemy_bonus.c
 
 all: $(NAME)
 
