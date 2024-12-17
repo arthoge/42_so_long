@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 15:29:21 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/14 01:15:00 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/17 16:01:53 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct s_game
 	void	*exit_close_img;
 	void	*exit_open_img;
 	void	*wall_img;
+	void	*wall2_img;
 	void	*enemy_img;
 	char	**map;
 	int		map_width;
@@ -56,6 +57,7 @@ typedef struct s_game
 	int		nbr_coll;
 	int		nbr_move;
 	int		hero_direction;
+	int		frame;
 }	t_game;
 
 int		ft_init_game(char *file_path, t_game *game);
@@ -83,5 +85,7 @@ void	ft_free_tab(char **tab, int size);
 
 void	ft_init_enemy(t_game *game);
 void	ft_move_enemy(t_game *game);
+
+int		ft_animate_wall(void *param);
 
 #endif

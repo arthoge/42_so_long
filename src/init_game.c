@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:10:12 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/14 00:59:43 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/17 15:46:49 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ static void	ft_init_struct(t_game *game)
 	game->exit_close_img = NULL;
 	game->exit_open_img = NULL;
 	game->wall_img = NULL;
+	game->wall2_img = NULL;
 	game->map = NULL;
 	game->map_width = 0;
 	game->map_height = 0;
 	game->nbr_coll = 0;
 	game->nbr_move = 0;
 	game->hero_direction = 1;
+	game->frame = 0;
 }
 
 static int	ft_calculate_window_size(t_game *game)

@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 NAME = so_long
 
 MLX_DIR = minilibx-linux
@@ -23,7 +23,8 @@ SRC =	src/main.c \
 		src/move_hero.c \
 		src/utils.c \
 		src/init_enemy_bonus.c \
-		src/move_enemy_bonus.c
+		src/move_enemy_bonus.c \
+		src/animation_bonus.c
 
 all: $(NAME)
 

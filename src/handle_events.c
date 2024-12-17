@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:12:34 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/14 01:42:57 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/17 15:34:28 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static void	ft_destroy_image(t_game *game)
 		mlx_destroy_image(game->mlx_ptr, game->exit_open_img);
 	if (game->wall_img)
 		mlx_destroy_image(game->mlx_ptr, game->wall_img);
+	if (game->wall2_img)
+		mlx_destroy_image(game->mlx_ptr, game->wall2_img);
 	if (game->enemy_img)
 		mlx_destroy_image(game->mlx_ptr, game->enemy_img);
 }

@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:11:07 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/14 01:05:24 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/17 15:33:47 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	ft_load_assets(t_game *game)
 	if (!ft_load_img(game, &game->bg_img, "img/bg.xpm"))
 		return (0);
 	if (!ft_load_img(game, &game->wall_img, "img/wall.xpm"))
+		return (0);
+	if (!ft_load_img(game, &game->wall2_img, "img/wall_2.xpm"))
 		return (0);
 	if (!ft_load_img(game, &game->hero_img, "img/hero.xpm"))
 		return (0);

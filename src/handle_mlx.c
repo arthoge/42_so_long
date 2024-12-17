@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 12:51:37 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/13 14:44:32 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/17 15:41:21 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_run_game(t_game *game)
 {
 	mlx_hook(game->win_ptr, DestroyNotify, 0, ft_handle_close, game);
 	mlx_key_hook(game->win_ptr, ft_handle_keypress, game);
+	mlx_loop_hook(game->mlx_ptr, ft_animate_wall, game);
 	mlx_loop(game->mlx_ptr);
 }
 
