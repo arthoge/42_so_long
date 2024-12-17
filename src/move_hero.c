@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:12:51 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/14 02:09:17 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/17 18:47:23 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static void	ft_move_exit(t_game *game, int new_y, int new_x)
 		game->hero_y = new_y;
 		game->map[game->hero_y][game->hero_x] = 'P';
 		ft_print_nbr_move(game);
+		ft_printf("Bravo! You won the game!\n");
 		ft_handle_close(game);
 	}
 }

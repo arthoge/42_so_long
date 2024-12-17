@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:10:12 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/17 15:46:49 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/17 18:42:53 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ static void	ft_init_struct(t_game *game)
 	game->nbr_move = 0;
 	game->hero_direction = 1;
 	game->frame = 0;
+	game->nbr_enemies = 0;
+	game->enemies = NULL;
 }
 
 static int	ft_calculate_window_size(t_game *game)
@@ -54,7 +56,7 @@ static int	ft_calculate_window_size(t_game *game)
 	return (1);
 }
 
-static void	ft_init_hero_and_coll(t_game *game)
+static void	ft_init_hero_coll_enemies(t_game *game)
 {
 	int	y;
 	int	x;
@@ -72,6 +74,8 @@ static void	ft_init_hero_and_coll(t_game *game)
 			}
 			if (game->map[y][x] == 'C')
 				game->nbr_coll += 1;
+			if (game->map[y][x] == 'X')
+				game->nbr_enemies += 1;
 			x++;
 		}
 		y++;
@@ -85,21 +89,14 @@ int	ft_init_game(char *file_path, t_game *game)
 	if (!game->map)
 		return (0);
 	if (!ft_check_map(game))
-	{
-		ft_free_tab(game->map, game->map_height);
-		return (0);
-	}
-	ft_init_hero_and_coll(game);
+		return (ft_free_tab(game->map, game->map_height), 0);
+	ft_init_hero_coll_enemies(game);
 	if (!ft_check_valid_path(game))
-	{
-		ft_free_tab(game->map, game->map_height);
-		return (0);
-	}
-	ft_init_enemy(game);
+		return (ft_free_tab(game->map, game->map_height), 0);
+	if (!ft_init_enemies(game))
+		return (ft_free_tab(game->map, game->map_height), 0);
 	if (!ft_calculate_window_size(game))
-	{
-		ft_free_tab(game->map, game->map_height);
-		return (0);
-	}
+		return (free(game->enemies), \
+		ft_free_tab(game->map, game->map_height), 0);
 	return (1);
 }

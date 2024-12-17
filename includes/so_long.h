@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 15:29:21 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/17 16:01:53 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/17 18:50:29 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,12 @@
 # define KEY_S 115
 # define KEY_D 100
 
+typedef struct s_enemy
+{
+	int	x;
+	int	y;
+}	t_enemy;
+
 typedef struct s_game
 {
 	void	*mlx_ptr;
@@ -52,8 +58,8 @@ typedef struct s_game
 	int		map_height;
 	int		hero_x;
 	int		hero_y;
-	int		enemy_x;
-	int		enemy_y;
+	t_enemy	*enemies;
+	int		nbr_enemies;
 	int		nbr_coll;
 	int		nbr_move;
 	int		hero_direction;
@@ -83,7 +89,7 @@ void	ft_move_hero(t_game *game, int move_x, int move_y);
 void	*ft_realloc(void *ptr, size_t new_size);
 void	ft_free_tab(char **tab, int size);
 
-void	ft_init_enemy(t_game *game);
+int		ft_init_enemies(t_game *game);
 void	ft_move_enemy(t_game *game);
 
 int		ft_animate_wall(void *param);

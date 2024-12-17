@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 12:51:37 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/17 15:41:21 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/17 18:44:26 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	ft_setup_mlx(t_game *game)
 	if (!game->mlx_ptr)
 	{
 		ft_free_tab(game->map, game->map_height);
+		free(game->enemies);
 		return (0);
 	}
 	game->win_ptr = mlx_new_window(game->mlx_ptr, game->wd_width, \
@@ -41,6 +42,7 @@ int	ft_setup_mlx(t_game *game)
 		mlx_destroy_display(game->mlx_ptr);
 		free(game->mlx_ptr);
 		ft_free_tab(game->map, game->map_height);
+		free(game->enemies);
 		return (0);
 	}
 	return (1);

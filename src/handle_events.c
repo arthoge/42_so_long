@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:12:34 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/17 15:34:28 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/17 18:45:11 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int	ft_handle_close(t_game *game)
 {
 	if (game->map)
 		ft_free_tab(game->map, game->map_height);
+	if (game->enemies)
+		free(game->enemies);
 	ft_destroy_image(game);
 	if (game->win_ptr)
 		mlx_destroy_window(game->mlx_ptr, game->win_ptr);
@@ -65,7 +67,6 @@ static void	ft_handle_move(t_game *game, int keycode)
 		game->hero_direction = 1;
 		ft_move_hero(game, 1, 0);
 	}
-	ft_move_enemy(game);
 }
 
 int	ft_handle_keypress(int keycode, t_game *game)
