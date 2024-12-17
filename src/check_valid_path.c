@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 19:54:14 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/17 16:31:14 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/17 17:55:33 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ static void	ft_flood_fill(char **map, int x, int y, char target)
 		return ;
 	if (map[y][x] == '1')
 		return ;
-	if (map[y][x] != '0' && map[y][x] != target && map[y][x] != 'P' && map[y][x] != 'C')
+	if (map[y][x] != '0' && map[y][x] != target \
+	&& map[y][x] != 'P' && map[y][x] != 'C')
 		return ;
 	map[y][x] = 'V';
 	ft_flood_fill(map, x + 1, y, target);
