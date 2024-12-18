@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:13:04 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/18 12:36:48 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/18 15:25:02 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	**ft_load_map(char *file_path)
 	fd = open(file_path, O_RDONLY);
 	if (fd < 0)
 	{
-		perror("Error opening file");
+		perror("Error\nopening file");
 		return (NULL);
 	}
 	map = NULL;
