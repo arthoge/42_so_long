@@ -24,7 +24,8 @@ SRC =	src/main.c \
 		src/utils.c \
 		src/init_enemy_bonus.c \
 		src/move_enemy_bonus.c \
-		src/animation_bonus.c
+		src/animation_bonus.c \
+		src/check_map_extension.c
 
 all: $(NAME)
 

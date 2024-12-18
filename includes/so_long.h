@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 15:29:21 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/17 18:50:29 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/18 12:59:17 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,12 +86,14 @@ int		ft_handle_keypress(int keycode, t_game *game);
 
 void	ft_move_hero(t_game *game, int move_x, int move_y);
 
-void	*ft_realloc(void *ptr, size_t new_size);
+void	*ft_realloc(void *ptr, size_t old_size, size_t new_size);
 void	ft_free_tab(char **tab, int size);
 
 int		ft_init_enemies(t_game *game);
 void	ft_move_enemy(t_game *game);
 
 int		ft_animate_wall(void *param);
+
+int		ft_check_map_extension(const char *filename);
 
 #endif

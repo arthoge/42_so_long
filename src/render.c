@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:12:00 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/17 15:51:49 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/18 12:49:42 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ void	ft_render_map(t_game *game)
 	char	*nbr_move;
 
 	nbr_move = ft_itoa(game->nbr_move);
-	mlx_clear_window(game->mlx_ptr, game->win_ptr);
 	ft_draw_elements(game);
 	ft_draw_black_square(game, 5, 5, 20);
 	ft_draw_black_square(game, 20, 5, 20);

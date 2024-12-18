@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:13:04 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/17 19:39:45 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/18 12:36:48 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ static char	**ft_append_line_to_map(char **map, char *line, int rows)
 {
 	char	**new_map;
 
-	new_map = ft_realloc(map, sizeof(char *) * (rows + 1));
+	new_map = ft_realloc(map, sizeof(char *) * rows, \
+	sizeof(char *) * (rows + 1));
 	if (!new_map)
 	{
 		free(line);
