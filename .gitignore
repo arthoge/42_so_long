@@ -1,6 +1,5 @@
 .archive/
 .vscode/
-README.md
 so_long
 obj/
 g_libft/libft.a
