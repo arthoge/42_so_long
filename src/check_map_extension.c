@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:55:50 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/18 13:12:27 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/20 16:19:18 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	ft_check_map_extension(const char *filename)
 		return (ft_print_file_error(), 0);
 	extension = ft_strrchr(filename, '.');
 	if (!extension || ft_strncmp(extension, ".ber", 4) != 0)
+		return (ft_print_file_error(), 0);
+	if (ft_strlen(extension) != 4)
 		return (ft_print_file_error(), 0);
 	return (1);
 }
