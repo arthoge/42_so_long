@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:10:12 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/17 18:42:53 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/28 14:33:36 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ static void	ft_init_hero_coll_enemies(t_game *game)
 
 int	ft_init_game(char *file_path, t_game *game)
 {
+	ft_srand();
 	ft_init_struct(game);
 	game->map = ft_load_map(file_path);
 	if (!game->map)

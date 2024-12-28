@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 15:29:21 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/18 12:59:17 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/28 14:18:42 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ void	ft_free_tab(char **tab, int size);
 
 int		ft_init_enemies(t_game *game);
 void	ft_move_enemy(t_game *game);
+void	ft_srand(void);
 
 int		ft_animate_wall(void *param);
 

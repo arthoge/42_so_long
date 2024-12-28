@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 01:31:19 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/17 18:31:29 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/28 14:18:14 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,15 @@ static void	ft_move_empty(t_game *game, int new_y, int new_x, int i)
 	game->map[new_y][new_x] = 'X';
 }
 
+void	ft_srand(void)
+{
+	srand(time(NULL));
+}
+
 static void	ft_set_rand_direction(int *move_x, int *move_y)
 {
 	int	direction;
 
-	srand(time(NULL));
 	direction = rand() % 4;
 	if (direction == 0)
 	{
