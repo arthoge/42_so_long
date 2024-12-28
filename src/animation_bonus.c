@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 15:11:19 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/28 14:43:24 by aoger            ###   ########.fr       */
+/*   Updated: 2024/12/28 17:13:01 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	ft_animate_wall(void *param)
 	game = (t_game *)param;
 	if (!game)
 		return (1);
-	
 	frame_rate = 500000;
 	gettimeofday(&current_time, NULL);
 	elapsed_time = (current_time.tv_sec - last_time.tv_sec) * 1000000L + \
