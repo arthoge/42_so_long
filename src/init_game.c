@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:10:12 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/28 14:33:36 by aoger            ###   ########.fr       */
+/*   Updated: 2025/01/01 19:05:28 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,16 @@ static void	ft_init_hero_coll_enemies(t_game *game)
 	}
 }
 
+static int	ft_count_rows(char **map)
+{
+	int	count;
+
+	count = 0;
+	while (map[count])
+		count++;
+	return (count);
+}
+
 int	ft_init_game(char *file_path, t_game *game)
 {
 	ft_srand();
@@ -89,6 +99,7 @@ int	ft_init_game(char *file_path, t_game *game)
 	game->map = ft_load_map(file_path);
 	if (!game->map)
 		return (0);
+	game->map_height = ft_count_rows(game->map);
 	if (!ft_check_map(game))
 		return (ft_free_tab(game->map, game->map_height), 0);
 	ft_init_hero_coll_enemies(game);

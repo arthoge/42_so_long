@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:01:05 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/14 00:30:21 by aoger            ###   ########.fr       */
+/*   Updated: 2025/01/01 19:06:20 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ static int	ft_check_rectangle(t_game *game)
 			return (0);
 		rows++;
 	}
-	game->map_height = rows;
 	return (1);
 }
 
@@ -86,6 +85,23 @@ static int	ft_count_elements(t_game *game, char element)
 
 static int	ft_check_elements(t_game *game)
 {
+	int	x;
+	int	y;
+
+	y = 0;
+	while (y < game->map_height)
+	{
+		x = 0;
+		while (x < game->map_width)
+		{
+			if (game->map[y][x] != '1' && game->map[y][x] != '0' \
+			&& game->map[y][x] != 'P' && game->map[y][x] != 'E' \
+			&& game->map[y][x] != 'C' && game->map[y][x] != 'X')
+				return (0);
+			x++;
+		}
+		y++;
+	}
 	if (ft_count_elements(game, 'E') != 1)
 		return (0);
 	if (ft_count_elements(game, 'C') < 1)
@@ -106,7 +122,7 @@ int	ft_check_map(t_game *game)
 	if (!ft_check_elements(game))
 	{
 		ft_printf("Error\n");
-		ft_printf("Not the right count of elements on the map.\n");
+		ft_printf("Not the right elements on the map.\n");
 		return (0);
 	}
 	if (!ft_check_walls(game, '1'))

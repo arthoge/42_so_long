@@ -6,7 +6,7 @@
 /*   By: aoger <aoger@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:13:04 by aoger             #+#    #+#             */
-/*   Updated: 2024/12/20 16:17:26 by aoger            ###   ########.fr       */
+/*   Updated: 2025/01/01 19:02:15 by aoger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ static char	**ft_append_line_to_map(char **map, char *line, int rows)
 	if (!new_map)
 	{
 		free(line);
-		ft_free_tab(map, rows);
 		return (NULL);
 	}
 	new_map[rows] = line;
@@ -54,7 +53,7 @@ char	**ft_load_map(char *file_path)
 		line = get_next_line(fd);
 		map = ft_append_line_to_map(map, line, rows);
 		if (!map)
-			return (ft_clean_on_error(fd, map, rows), NULL);
+			return (free(line), ft_clean_on_error(fd, map, rows), NULL);
 		if (!line)
 			break ;
 		rows++;
