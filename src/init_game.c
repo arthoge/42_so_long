@@ -26,6 +26,7 @@ static void	ft_init_struct(t_game *game)
 	game->exit_open_img = NULL;
 	game->wall_img = NULL;
 	game->wall2_img = NULL;
+	game->enemy_img = NULL;
 	game->map = NULL;
 	game->map_width = 0;
 	game->map_height = 0;
