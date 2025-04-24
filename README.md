@@ -32,3 +32,7 @@ A: Move left
 S: Move down
 D: Move right
 ```
+
+## Screenshots
+![screenshot](screenshot/screenshot1.png)
+![screenshot](screenshot/screenshot2.png)
